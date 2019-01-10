@@ -1,0 +1,23 @@
+/* 
+  # = ID
+  . = class
+*/
+
+body {
+  background-color: silver;
+}
+
+#wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+#options {
+  width: 50%;
+  float: left;
+  border-right: 1px solid black;
+}
+
+#cart {
+  margin-left: 51%;
+}
