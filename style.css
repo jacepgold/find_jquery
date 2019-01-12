@@ -1,10 +1,5 @@
-/* 
-  # = ID
-  . = class
-*/
-
 body {
-  background-color: silver;
+  background-color: gray;
 }
 
 #wrapper {
@@ -15,7 +10,7 @@ body {
 #options {
   width: 50%;
   float: left;
-  border-right: 1px solid black;
+  border-right: 1px solid green;
 }
 
 #cart {

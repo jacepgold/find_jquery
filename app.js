@@ -1,8 +1,8 @@
-$(document).ready( function() {
-  $('#plan').on('change', function() { // Do this when the user makes a change
-    var priceText; // we will store the text to display here
+$(document).ready(function () {
+  $("#plan").on('click', function () {
+    var priceText;
 
-    switch(this.value) { // Based on the value the user chose:
+    switch (this.value) {
       case 'monthly':
         priceText = '$10.00 /mo';
         break;
@@ -14,35 +14,40 @@ $(document).ready( function() {
         break;
     }
 
+    $("#price").text(priceText);
+  }); // end change price
 
-    document.getElementById('#test')
-    $('#test')
 
-    // Change the <h1 id="price"> to be equal to priceText
-    $('#price').text(priceText);
-  });
-
-  $('#add').on('click', function () {
-    var plan = $('#plan')
+  $("#add").click(function () {
+    // $("#in_cart").append("<p class='test'>#in_cart " + (++counter) + "</p>");
+    var plan = $("#plan");
     var installment = plan.val();
     var price = $('#price').text();
-    var inCart = $('#in_cart');
-    var numeric = price.replace(/[[A-Za-z$\/\s]/g, '')
+    var inCart = $("#in_cart");
+    var numeric = price.replace(/[A-Za-z$\/s]/g, '');
     var data = 'data-price="' + numeric + '" data-plan="' + installment + '"';
-    inCart.append('<li class="entry"' + data + '>' + installment + ' - ' + price + '</li>')
-    
+    // data = data-price="10.00" data-plan="monthly"
+    var button = '<button class="remove">x</button>';
+    inCart.append('<li class="entry" ' + data + '>' + installment + ' - ' + price + button + '</li>');
+    /* inCart.append creates this
+      <li class="entry" data-price="10.00" data-plan="monthly">
+        monthly - 10.00 /mo
+        <button class="remove">x</button>
+      </li>
+    */
     updateTotal();
-  });
+  }); // end add to cart
 
 
   function updateTotal() {
-    var total = 0;
+    var total = 0.00;
 
-    $('.entry').each(function(index, entry) {
+    $('.entry').each(function (index, entry) {
       var data = $(entry).data();
       var price = parseFloat(data.price);
       var installment = data.plan;
-      switch(installment) {
+
+      switch (installment) {
         case 'monthly':
           total += price;
           break;
@@ -53,8 +58,12 @@ $(document).ready( function() {
           total += price * 12;
           break;
       }
-    });
+    }); // end $('.entry').each()
+    $("#total").text('$' + total);
+  } // end updateTotal();
 
-    $('#total').text('$' + total);
-  }
+  $('#in_cart').on('click', 'button.remove', function () {
+    $(this).parents('li').remove();
+    updateTotal();
+  }); // end remove item
 });
