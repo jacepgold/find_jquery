@@ -1,0 +1,58 @@
+body {
+  background-color: gray;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p, li {
+  font-size: 20px;
+}
+
+#wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+#options {
+  width: 50%;
+  float: left;
+  border-right: 1px solid green;
+}
+
+#cart {
+  margin-left: 51%;
+  /* Hide cart until user wants to see it */
+  display: none;
+}
+
+#empty {
+  display: none;
+}
+
+select, button:not(.remove) {
+  font-size: 15px;
+}
+
+select {
+  width: 200px;
+  height: 35px;
+  margin-bottom: 25px;
+}
+
+button:not(.remove) {
+  width: 150px;
+  height: 45px;
+  padding: 5px 10px;
+}
+
+button.remove {
+  margin-left: 10px;
+  /* width: 20px;
+  height: 10px; */
+}
