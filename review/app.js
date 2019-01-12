@@ -27,7 +27,7 @@ $(document).ready( function() {
     var numeric = price.replace(/[A-Za-z$\/s]/g, '');
     var data = 'data-price="' + numeric + '" data-plan="' + installment + '"';
     // data = data-price="10.00" data-plan="monthly"
-    var button = '<button class="remove">x</button>';
+    var button = '<button class="remove">Remove</button>';
     inCart.append('<li class="entry" ' + data + '>' + installment + ' - ' + price + button + '</li>');
     /* inCart.append creates this
       <li class="entry" data-price="10.00" data-plan="monthly">
