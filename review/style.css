@@ -1,0 +1,22 @@
+body {
+  background-color: gray;
+}
+
+#wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+#options {
+  width: 50%;
+  float: left;
+  border-right: 1px solid green;
+}
+
+#cart {
+  margin-left: 51%;
+}
+
+#empty {
+  display: none;
+}

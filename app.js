@@ -14,6 +14,10 @@ $(document).ready( function() {
         break;
     }
 
+
+    document.getElementById('#test')
+    $('#test')
+
     // Change the <h1 id="price"> to be equal to priceText
     $('#price').text(priceText);
   });
